@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: b8e15c3023ff9a444b3de9f79c770916
   - enabled: 1
-    path: Assets/Scenes/Wiring Game.unity
+    path: Assets/Scenes/Couse 1.unity
     guid: 6a6d1cecd1421bb488cee070e0ff435f
   - enabled: 1
     path: Assets/Scenes/Designer Mode.unity
