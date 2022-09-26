@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LineRender : MonoBehaviour
 {
+
     public LineRenderer lineRenderer;
     public Transform pos1;
     public Transform pos2;
@@ -20,4 +22,5 @@ public class LineRender : MonoBehaviour
         lineRenderer.SetPosition(0, pos1.position);
         lineRenderer.SetPosition(1, pos2.position);
     }
+
 }
