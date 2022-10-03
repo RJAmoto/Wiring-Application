@@ -8,10 +8,8 @@ public class Connector : MonoBehaviour
     // Start is called before the first frame update
     
     public LineRenderer line;
-    public Material lineMat;
     bool full = false;
-    public Toggle toggle;
-    Manager manager;
+    public bool isCorrect;
 
     List<GameObject> nodes = new List<GameObject>();
 
@@ -20,60 +18,54 @@ public class Connector : MonoBehaviour
         line.positionCount = 2;
         line.SetPosition(0, new Vector3(0,0,0));
         line.SetPosition(1, new Vector3(0,0,0));
-        line.material = lineMat;
-        line.startWidth = 0;
-        line.endWidth = 1f;
-
-        GameObject newLine = new GameObject("Line");
-        line = newLine.AddComponent<LineRenderer>();
-
         full = false;
+        isCorrect = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(nodes.Count <= 1)
+        {
+            line.SetPosition(0, nodes[0].transform.position);
+            line.SetPosition(1, nodes[0].transform.position);
+        }
+        else if(nodes.Count >=2)
+        {
             line.SetPosition(0, nodes[0].transform.position);
             line.SetPosition(1, nodes[1].transform.position);
-
-            if (nodes.Count >= 2)
-            {
-                full = true;
-                if (!manager.getConnections().Contains(this)) {
-                    manager.addConnection(this);
-                    nodes.Clear();
-                    line = null;
-                }
-            }
+            full = true;
+        }
     }
 
     public void Connect(GameObject node)
     {
-        if (nodes.Count > 2)
-        {
-            return;
-        }
-        else
-        {
             nodes.Add(node);
-        }
     }
 
-    public void removeConnect()
+    public bool isFull()
+    {
+        return full;
+    }
+
+    public void restart()
     {
         nodes.Clear();
-        manager.getConnections().Remove(this);
+        line.SetPosition(0, new Vector3(0, 0, 0));
+        line.SetPosition(1, new Vector3(0, 0, 0));
+        full = false;
     }
 
-    public bool isEven()
+    public List<GameObject> getNodes()
     {
-        if ((nodes.Count % 2) == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return nodes;
+    }
+    public bool isCorrectConnection()
+    {
+        return isCorrect;
+    }
+    public void setCorrect(bool correct)
+    {
+        isCorrect = correct;
     }
 }
