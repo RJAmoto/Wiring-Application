@@ -15,6 +15,7 @@ public class Manager : MonoBehaviour
 
     public Animator CheckAnimation;
     public TextMeshProUGUI checkText;
+    public bool canMoveNext = false;
 
     void Start()
     {
@@ -78,9 +79,13 @@ public class Manager : MonoBehaviour
             }
             Debug.Log("Wire " + a + " connection correct: " + connection[a].GetComponent<Connector>().isCorrectConnection());
         }
+        if(connections.Count <= 0)
+        {
+            connectionsCorrect = false;
+        }
 
         for (int c = 0; c < connections.Count; c++) {
-            if (!connection[c].GetComponent<Connector>().isCorrect || connections.Count<answerPairs.Length )
+            if (!connection[c].GetComponent<Connector>().isCorrect || connections.Count<answerPairs.Length)
             {
                 connectionsCorrect = false;
             }
@@ -91,17 +96,33 @@ public class Manager : MonoBehaviour
             checkText.SetText("Correct");
             checkText.color = new Color(0f, 100f, 0f);
             CheckAnimation.SetTrigger("Activate");
-     
+            canMoveNext = true;
+            checkText.fontSize = 36;
         }
         else
         {
             checkText.SetText("Wrong");
             checkText.color = new Color(100f, 0f, 0f);
             CheckAnimation.SetTrigger("Activate");
+            checkText.fontSize = 36;
         }
     }
     public void exit(){
         SceneManager.LoadScene(0);
+    }
+
+    public void next(int CourseBuildIndex)
+    {
+        if (canMoveNext) {
+            SceneManager.LoadScene(CourseBuildIndex);
+        }
+        else
+        {
+            checkText.SetText("You haven't completed this run yet!");
+            checkText.color = new Color(50f, 50f, 0f);
+            CheckAnimation.SetTrigger("Activate");
+            checkText.fontSize = 15;
+        }
     }
 }
 
