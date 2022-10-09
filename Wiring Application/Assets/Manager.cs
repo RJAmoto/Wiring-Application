@@ -17,6 +17,10 @@ public class Manager : MonoBehaviour
     public TextMeshProUGUI checkText;
     public bool canMoveNext = false;
 
+    public Multimeter multimeter;
+    public int correctMultimeterStatusCount;
+
+    public bool multimeterRecommended; 
     void Start()
     {
 
@@ -82,6 +86,13 @@ public class Manager : MonoBehaviour
         if(connections.Count <= 0)
         {
             connectionsCorrect = false;
+        }
+        if (multimeterRecommended)
+        {
+            if (multimeter.getState() != correctMultimeterStatusCount)
+            {
+                connectionsCorrect = false;
+            }
         }
 
         for (int c = 0; c < connections.Count; c++) {

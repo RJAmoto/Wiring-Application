@@ -18,4 +18,17 @@ Series and parallel Run 2 Answer Key
 (70, 41)
 (76, 42)
 
+Maximum Power Transfer and Efficiency of Transmission Answer Key
+
+(17, 35)
+(18, 19)
+(19, 37)
+(20, 38)
+
+(35, 79)
+(36, 47)
+(37, 45)
+(38, 81)
+Multimeter (3)
+
 
