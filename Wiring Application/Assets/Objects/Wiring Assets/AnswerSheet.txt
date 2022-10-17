@@ -75,4 +75,122 @@ Mesh and Nodal Run 2
 
 Multimeter (1)
 
+Super Position Theorem 1 Answers
 
+(17, 60)
+(18, 63)
+(19, 76)
+(20, 69)
+
+(61, 52)
+(62, 53)
+(70, 54)
+(75, 55)
+
+(51, 79) pink
+(302, 81) dark blue
+(300, 400) red
+(304, 402) light blue
+
+Multimeter (2)
+
+Super Position Theorem 2 Answers
+
+(17, 60)
+(18, 63)
+(19, 76)
+(20, 69)
+
+(61, 52)
+(62, 53)
+(70, 54)
+(75, 55)
+
+(51, 79) pink
+(302, 81) dark blue
+(300, 304) red
+
+Multimeter (2)
+
+Super Position Theorem 3 Answers
+
+(17, 60)
+(18, 63)
+(19, 76)
+(20, 69)
+
+(61, 52)
+(62, 53)
+(70, 54)
+(75, 55)
+
+(51, 302) pink
+(300, 400) red
+(304, 402) light blue
+
+Multimeter (2)
+
+Super Position Theorem 4 Answers
+
+(17, 60)
+(18, 63)
+(19, 76)
+(20, 69)
+
+(61, 52)
+(62, 53)
+(70, 54)
+(75, 55)
+
+(51, 79) pink
+(302, 81) dark blue
+(300, 400) red
+(304, 402) light blue
+
+Multimeter (2) 
+Super Position Theorem 5 Answers
+
+(17, 60)
+(18, 63)
+(19, 76)
+(20, 69)
+
+(61, 52)
+(62, 53)
+(70, 54)
+(75, 55)
+
+(51, 79) pink
+(302, 81) dark blue
+(300, 400) red
+(304, 402) light blue
+
+Multimeter (2)
+
+Characteristics Response Run 1
+
+(17, 63)
+(18, 48)
+(19, 60)
+(20, 63)
+(21, 35) 
+(22, 48)
+
+(61, 42)
+(62, 45)
+
+(36, 37)
+
+Characteristics Response Run 2
+
+(17, 66)
+(18, 306)
+(19, 64)
+(20, 66)
+(21, 49) 
+(22, 306)
+
+(65, 300)
+(500, 303)
+
+(50, 51)

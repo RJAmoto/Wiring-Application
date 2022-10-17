@@ -36,8 +36,8 @@ public class Manager : MonoBehaviour
 
     public void addConnection(GameObject node)
     {
-        if (!(connection[connectionIndex].GetComponent<Connector>().isFull()))
-        {
+        if (!(connection[connectionIndex].GetComponent<Connector>().isFull()))  
+      {
 
             connection[connectionIndex].GetComponent<Connector>().Connect(node);
         }
