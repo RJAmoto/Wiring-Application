@@ -33,6 +33,11 @@ public class Manager : MonoBehaviour
         {
             connections.Add(connection[connectionIndex]);
             connectionIndex += 1;
+
+            if (connections[connections.Count-1].GetComponent<Connector>().getNodes()[0]==connections[connections.Count - 1].GetComponent<Connector>().getNodes()[1])
+            {
+                undo();
+            }
         }
 
         if (willExit) {
@@ -49,7 +54,7 @@ public class Manager : MonoBehaviour
     public void addConnection(GameObject node)
     {
         if (!(connection[connectionIndex].GetComponent<Connector>().isFull()))  
-      {
+        {
 
             connection[connectionIndex].GetComponent<Connector>().Connect(node);
         }
