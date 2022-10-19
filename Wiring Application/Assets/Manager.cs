@@ -20,7 +20,9 @@ public class Manager : MonoBehaviour
     public Multimeter multimeter;
     public int correctMultimeterStatusCount;
 
-    public bool multimeterRecommended; 
+    public bool multimeterRecommended;
+    float time = 5;
+    public bool willExit = false;
     void Start()
     {
 
@@ -31,6 +33,16 @@ public class Manager : MonoBehaviour
         {
             connections.Add(connection[connectionIndex]);
             connectionIndex += 1;
+        }
+
+        if (willExit) {
+            time -= 1 * Time.deltaTime;
+
+            if (time <= 0)
+            {
+                Application.Quit();
+                Debug.Log("Application Quitting");
+            }
         }
     }
 
@@ -69,7 +81,6 @@ public class Manager : MonoBehaviour
                     if (wire2 == answer2)
                     {
                         connection[a].GetComponent<Connector>().setCorrect(true);
-                        Debug.Log("Wire 1: " + wire1 + " Wire 2: " + wire2 + " Answer 1: " + answer1 + " Answer 2: " + answer2);
                     }
                 }
                 else if (wire1 == answer2)
@@ -77,11 +88,9 @@ public class Manager : MonoBehaviour
                     if (wire2 == answer1)
                     {
                         connection[a].GetComponent<Connector>().setCorrect(true);
-                        Debug.Log("Wire 1: " + wire1 + " Wire 2: " + wire2 + " Answer 1: " + answer1 + " Answer 2: " + answer2);
                     }
                 }
             }
-            Debug.Log("Wire " + a + " connection correct: " + connection[a].GetComponent<Connector>().isCorrectConnection());
         }
         if(connections.Count <= 0)
         {
@@ -109,6 +118,7 @@ public class Manager : MonoBehaviour
             CheckAnimation.SetTrigger("Activate");
             canMoveNext = true;
             checkText.fontSize = 36;
+            willExit = true;
         }
         else
         {
