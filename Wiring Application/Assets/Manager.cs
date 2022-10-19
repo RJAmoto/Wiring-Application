@@ -6,7 +6,7 @@ using TMPro;
 
 public class Manager : MonoBehaviour
 {
-
+    public AudioSource[] click;
     public List<GameObject> connections = new List<GameObject>();
     public GameObject[] connection;
     int connectionIndex = 0;
@@ -134,6 +134,29 @@ public class Manager : MonoBehaviour
             CheckAnimation.SetTrigger("Activate");
             checkText.fontSize = 15;
         }
+    }
+
+    public void undo()
+    {
+        connections[connections.Count - 1].GetComponent<Connector>().restart();
+
+        connections.RemoveAt(connections.Count-1);
+
+    }
+
+    public void clickSound()
+    {
+        click[0].Play();
+    }
+
+    public void unPlug()
+    {
+        click[1].Play();
+    }
+
+    public void rotateMultimeter()
+    {
+        click[2].Play();
     }
 }
 
