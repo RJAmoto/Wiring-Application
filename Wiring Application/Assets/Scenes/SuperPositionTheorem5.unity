@@ -8291,7 +8291,7 @@ MonoBehaviour:
   multimeter: {fileID: 1612566248}
   correctMultimeterStatusCount: 2
   connectAllowed: 1
-  multimeterRecommended: 1
+  multimeterRecommended: 0
   willExit: 0
 --- !u!4 &733416679
 Transform:

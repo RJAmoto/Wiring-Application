@@ -198,6 +198,7 @@ public class Manager : MonoBehaviour
     public void rotateMultimeter()
     {
         click[2].Play();
+        connectionsCorrect = true;
     }
 }
 
