@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacteristicsResponse2.unity
     guid: 19960aa1484325b4689eb14ea2856710
+  - enabled: 1
+    path: Assets/Scenes/Ohm's Law.unity
+    guid: f24862db9f2585742b50f584b5f39998
   m_configObjects: {}
